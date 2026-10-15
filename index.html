@@ -1,5 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>SYS — Struktur Root</title>
+<style>html,body{margin:0;height:100%;background:#05070a;color:#8cf0d0}</style>
+</head>
+<body>
+<div id="root"></div>
 <script type="module">
-  import { quadranisieren } from './sys/quad.js';
-  import { start } from './sys/CORE.load';
-  start({ eye: './visual/', team: './sys/runtime/team/' });
+  import { quadranisieren } from './quad.js';
+  import { start } from './SYS.js';
+  // x = zahl, x² = quadranisiert hoch/runter, x³ = doppel-quad
+  const x = 9;
+  const x2_hoch = quadranisieren(x, 'hoch'); // 8x = 89 = Polaris
+  const x2_runter = quadranisieren(x, 'runter'); // x8 = 98 = Hafen
+  const x3 = quadranisieren(quadranisieren(x, 'hoch'), 'runter'); // 8x8 = 898 = OCTA Loop
+  start({ eye: './eye.memory.html', team: './team.eye.html', x, x2_hoch, x2_runter, x3 });
 </script>
+</body>
+</html>
